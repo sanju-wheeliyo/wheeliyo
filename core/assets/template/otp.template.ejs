@@ -1,0 +1,195 @@
+<html>
+
+<head>
+    <title>Email Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body style="margin:0; padding:0; font-family: Plus Jakarta Sans, sans-serif; font-size: 10px;">
+    <table style="width:100%; margin:0 auto;">
+        <tr>
+            <td>
+                <table style="width: 100%; max-width: 680px; padding-left: 35px; padding-right: 35px; margin:0 auto;">
+                    <tr>
+                        <td style="padding-bottom: 20px; padding-left: 40px; padding-top: 20px;"><a
+                                style="display:block; max-width : 112px;" href="https://www.wheeliyo.com/"><img
+                                    style="width: 100%;"
+                                    src="https://staging-wheeliyo.s3.us-east-2.amazonaws.com/logo.png"
+                                    alt="wheelio" /></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span
+                                style="background: rgb(208,23,104);
+background: linear-gradient(90deg, rgba(208,23,104,1) 0%, rgba(245,92,51,1) 51%);  width: 100%; height: 5px; display: block;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 40px; padding-left: 40px; padding-bottom:    20px;">
+                            <h1 style="font-size:22px; margin:0">Hi  <%= user_name %>, </h1>
+                            <p style="font-size: 14px;">Here is your One Time Password (OTP).</p>
+                            <p style="font-size: 14px;">Please enter this code to verify your email address for Wheeliyo
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 40px; padding-bottom: 20px; padding-top: 10px;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span style="
+                                                width:55px;
+                                                height:55px;
+                                                padding: 15px;
+                                                border-radius: 5px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                background-color: #e4e8f3;
+                                                font-size: 24px;
+                                            ">
+                                            <%= content[0] %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span style="
+                                                width:55px;
+                                                height:55px;
+                                                padding: 15px;
+                                                border-radius: 5px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                background-color: #e4e8f3;
+                                                font-size: 24px;
+                                            ">
+                                            <%= content[1] %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span style="
+                                                width:55px;
+                                                height:55px;
+                                                padding: 15px;
+                                                border-radius: 5px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center ;
+                                                background-color: #e4e8f3;
+                                                font-size: 24px;
+                                            ">
+                                            <%= content[2] %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span style="
+                                                width:55px;
+                                                height:55px;
+                                                padding: 15px;
+                                                border-radius: 5px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                background-color: #e4e8f3;
+                                                font-size: 24px;
+                                            ">
+                                            <%= content[3] %>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 40px; padding-bottom: 25px; font-size: 14px;">
+                            <p style="margin:0;">OTP will expire in <strong>3 minutes.</strong></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 40px; padding-bottom: 25px; font-size: 14px;">
+                            <p>If you didn’t initiate the request, you can safely ignore this mail.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 40px; padding-bottom: 60px; font-size: 14px;">
+                            <p style="margin:0; padding-bottom:5px;">Best Regards,</p>
+                            <p
+                                style="margin:0; padding:0; background: -webkit-linear-gradient(#d01768, #f55c33); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                wheeliyo</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="
+                                padding-left: 40px; padding-right: 40px;
+                            ">
+                            <span
+                                style="padding-top: 10px; padding-bottom: 10px; width: 100%; display: flex; justify-content: center; border-bottom: 1px solid #e0e0e0; border-top: 1px solid #e0e0e0;">
+                                <ul style="list-style: none; margin: 0; padding: 0; display: flex">
+                                    <li style="padding: 5px">
+                                        <a style="width: 30px; height: 30px; display: block" href="https://www.instagram.com/wheeliyo/"><img
+                                                style="width: 100%"
+                                                src="https://staging-wheeliyo.s3.us-east-2.amazonaws.com/insta.png"
+                                                alt="Instagram"></a>
+                                    </li>
+                                    <li style="padding: 5px">
+                                        <a style="width: 30px; height: 30px; display: block" href="https://x.com/wheeliyo?t=Z4jj3ScvDh-4GCg3vsm4Ow&s=09"><img
+                                                style="width: 100%"
+                                                src="https://staging-wheeliyo.s3.us-east-2.amazonaws.com/x.png"
+                                                alt="X"></a>
+                                    </li>
+                                    <li style="padding: 5px">
+                                        <a style="width: 30px; height: 30px; display: block" href="https://www.facebook.com/profile.php?id=100088849007458&mibextid=LQQJ4d"><img
+                                                style="width: 100%"
+                                                src="https://staging-wheeliyo.s3.us-east-2.amazonaws.com/facebook.png"
+                                                alt="Facebook"></a>
+                                    </li>
+                                    <li style="padding: 5px">
+                                        <a style="width: 30px; height: 30px; display: block" href="https://www.linkedin.com/company/wheeliyo/"><img
+                                                style="width: 100%"
+                                                src="https://staging-wheeliyo.s3.us-east-2.amazonaws.com/linkedin.png"
+                                                alt="LinkedIn"></a>
+                                    </li>
+                                </ul>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 40px; padding-right: 40px; font-size: 10px;" align="center">
+                            <p style="margin: 10px 0;">2022 www.wheeliyo.com All rights reserved</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 40px; padding-right: 40px; font-size: 10px;" align="center">
+                            <p style="margin: 10px 0;">You are receiving this mail because you registered to join the
+                                wheeliyo platform as a dealer. This also shows that you agree to our Terms of Use and
+                                Privacy Policies. If you no longer want to receive mails from us, click the unsubscribe
+                                link below to unsubscribe.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding-left: 40px; padding-right: 40px; padding-bottom: 40px;">
+                            <ul style="list-style: none; padding: 0; margin: 0; text-align:center; font-size: 10px;">
+                                <li
+                                    style="display:inline-block; padding-left:20px; padding-right:20px; position: relative;">
+                                    <span
+                                        style="content: ''; position: absolute; left:0; top:3px; display: block; width: 7px; height: 7px; border-radius: 50px; background-color: #7f7f7f;"></span><a
+                                        style="color:#64748B;" href="https://www.wheeliyo.com/privacyPolicy">Privacy Policy</a>
+                                </li>
+                                <li
+                                    style="display:inline-block; padding-left:20px; padding-right:20px; position: relative;">
+                                    <span
+                                        style="content: ''; position: absolute; left:0; top:3px; display: block; width: 7px; height: 7px; border-radius: 50px; background-color: #7f7f7f;"></span><a
+                                        style="color:#64748B;" href="https://www.wheeliyo.com/termsAndConditions">Terms of Service</a>
+                                </li>
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

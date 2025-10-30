@@ -1,0 +1,50 @@
+{
+    "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "React": "readonly"
+    },
+    "rules": {
+        "no-unused-vars": [
+            1,
+            {
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "import/no-restricted-paths": [
+            "error",
+            {
+                "zones": [
+                    {
+                        "target": "./components",
+                        "from": "./pages"
+                    },
+                    {
+                        "target": "./lib",
+                        "from": "./pages"
+                    }
+                ]
+            }
+        ],
+        "@next/next/no-img-element": "warn",
+        "jsx-a11y/alt-text": "warn",
+        "react/no-unescaped-entities": "warn",
+        "no-unreachable": "warn",
+        "no-undef": "warn",
+        "no-unused-expressions": "warn"
+    },
+    "overrides": [
+        {
+            "files": ["components/modals/AddLeadModal.jsx"],
+            "rules": {
+                "no-unreachable": "off",
+                "no-undef": "off",
+                "no-unused-expressions": "off"
+            }
+        }
+    ]
+}

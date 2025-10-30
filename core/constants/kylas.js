@@ -1,0 +1,9 @@
+export const KYLAS_END_POINT = 'https://api.kylas.io/v1/'
+export const KYLAS_UNIVERSAL_API_KEY = process.env.KYLAS_UNIVERSAL_API_KEY
+export const KYLAS_VEHICLE_NUMBER_KEY = process.env.KYLAS_VEHICLE_NUMBER_KEY
+export const KYLAS_VEHICLE_BRAND_KEY = process.env.KYLAS_VEHICLE_BRAND_KEY
+export const KYLAS_VEHICLE_YEAR_KEY = process.env.KYLAS_VEHICLE_YEAR_KEY
+export const KYLAS_VEHICLE_MODEL_KEY = process.env.KYLAS_VEHICLE_MODEL_KEY
+export const KYLAS_VEHICLE_VARIANT_KEY = process.env.KYLAS_VEHICLE_VARIANT_KEY
+export const KYLAS_VEHICLE_STATE_KEY = process.env.KYLAS_VEHICLE_STATE_KEY
+export const KYLAS_VEHICLE_KM_KEY = process.env.KYLAS_VEHICLE_KM_KEY

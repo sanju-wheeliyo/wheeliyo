@@ -1,0 +1,50 @@
+import carServices from 'lib/services/car.services'
+import { useQuery } from 'react-query'
+
+export const useListBrands = (params) => {
+    return useQuery(
+        ['list-brands', params],
+        () => carServices.listBrands(params),
+        {
+            select: (data) => data.data,
+        }
+    )
+}
+
+export const useListModels = (params, queryOptions, cackeKey) => {
+    return useQuery(
+        ['list-models', cackeKey],
+        () => carServices.listModels(params),
+        {
+            select: (data) => data.data,
+            ...queryOptions,
+        }
+    )
+}
+
+export const useListVariants = (params, queryOptions, cackeKey) => {
+    return useQuery(
+        ['list-variants', cackeKey],
+        () => carServices.listVariants(params),
+        {
+            select: (data) => data.data,
+            ...queryOptions,
+        }
+    )
+}
+
+export const useListFuelTypes = () => {
+    return useQuery(['list-fuel-types'], () => carServices.listFuelType(), {
+        select: (data) => data.data,
+    })
+}
+
+export const useListTransmissionTypes = () => {
+    return useQuery(
+        ['list-transmission-types'],
+        () => carServices.listTransmissionType(),
+        {
+            select: (data) => data.data,
+        }
+    )
+}

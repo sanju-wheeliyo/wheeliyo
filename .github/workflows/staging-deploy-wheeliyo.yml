@@ -1,0 +1,25 @@
+name: Staging Deploy Wheeliyo Web
+on:
+    push:
+        branches:
+            - staging
+        paths:
+            - '**/**'
+jobs:
+    build:
+        name: Build
+        environment: STAGING
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Build & Deploy
+              env:
+                  PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+                  HOSTNAME: ${{secrets.HOST_DNS}}
+                  USER_NAME: ${{secrets.USERNAME}}
+
+              run: |
+                  echo "$PRIVATE_KEY" > private_key && sudo chmod 600 private_key &&
+                  ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+                     cd shell_codes/ && ./update.sh wheeliyo
+                      '

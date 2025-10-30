@@ -1,0 +1,280 @@
+<html>
+    <head>
+        <title>Email Verification</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body
+        style="
+            margin: 0;
+            padding: 0;
+            font-family: Plus Jakarta Sans, sans-serif;
+            font-size: 10px;
+        "
+    >
+        <table style="width: 100%">
+            <tr>
+                <td style="width: 100%">
+                    <table
+                        style="
+                            width: 100%;
+                            max-width: 595px;
+                            margin: 0 auto;
+                            background-color: #f4eae8;
+                            padding: 16px;
+                        "
+                    >
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="padding-bottom: 10px">
+                                            <a
+                                                style="
+                                                    display: block;
+                                                    max-width: 112px;
+                                                "
+                                                href="https://www.wheeliyo.com/"
+                                                ><img
+                                                    style="width: 100%"
+                                                    src="https://staging-wheeliyo.s3.us-east-2.amazonaws.com/logo.png"
+                                            /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-bottom: 10px">
+                                            <a
+                                                style="
+                                                    display: block;
+                                                    font-size: 10px;
+                                                    color: #64748b;
+                                                "
+                                                href="https://www.wheeliyo.com/"
+                                                >www.wheeliyo.com</a
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-bottom: 10px">
+                                            <a
+                                                style="
+                                                    display: block;
+                                                    font-size: 10px;
+                                                    color: #64748b;
+                                                "
+                                                href="#"
+                                                >contact@wheeliyo.com</a
+                                            >
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table
+                                    style="
+                                        width: 100%;
+                                        background-color: #ffffff;
+                                        border-radius: 20px;
+                                        border: 1px solid #efefef;
+                                    "
+                                >
+                                    <tr>
+                                        <td style="padding: 16px">
+                                            <table
+                                                style="
+                                                    width: 100%;
+                                                    font-size: 10px;
+                                                "
+                                            >
+                                                <tr>
+                                                    <td>
+                                                        <ul
+                                                            style="
+                                                                list-style: none;
+                                                                margin: 0;
+                                                                padding: 0;
+                                                                font-size: 10px;
+                                                                line-height: 14px;
+                                                            "
+                                                        >
+                                                            <li
+                                                                style="
+                                                                    color: #64748b;
+                                                                "
+                                                            >
+                                                                Invoice To
+                                                            </li>
+                                                            <li>
+                                                                <strong>
+                                                                    <%= content?.user?.name %>
+                                                                </strong>
+                                                            </li>
+                                                            <li
+                                                                style="
+                                                                    color: #64748b;
+                                                                "
+                                                            >
+                                                                <% if (content?.user?.email && content?.user?.email !== 'N/A' && content?.user?.email.trim() !== '') { %>
+                                                                    <%= content?.user?.email %>
+                                                                <% } else { %>
+                                                                    Email not provided
+                                                                <% } %>
+                                                            </li>
+
+                                                        <li style=" color: #64748B;">
+                                                            <%= content?.user?.phone %>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul style="list-style: none; margin: 0; padding: 0;">
+                                                        <li style=" color: #64748B; padding-bottom: 10px;">Invoice
+                                                            number</li>
+                                                        <li><strong>
+                                                                <%= content?.payment?._id %>
+                                                            </strong></li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul style="list-style: none; margin: 0; padding: 0;">
+                                                        <li style=" color: #64748B; padding-bottom: 10px;">Invoice of
+                                                        </li>
+                                                        <li><strong style="font-size: 20px; color: #D01768;">₹<%=
+                                                                    content?.payment?.amount %>
+                                                            </strong></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 30px;">
+                                                    <ul style="list-style: none; margin: 0; padding: 0;">
+                                                        <li style=" color: #64748B; padding-bottom: 10px;">Subject</li>
+                                                        <li><strong>Plan Purchase</strong></li>
+                                                    </ul>
+                                                </td>
+                                                <td style="padding-top: 30px;">
+                                                    <ul style="list-style: none; margin: 0; padding: 0;">
+                                                        <li style=" color: #64748B; padding-bottom: 10px;">Invoice date
+                                                        </li>
+                                                        <li><strong>
+                                                                <!-- <%= new Date(content?.payment?.updatedAt).toDateString()
+                                                                    %> -->
+                                                                <%= new
+                                                                    Date(content?.payment?.updatedAt)?.toDateString()?.split(' ').slice(1).join(' ') %>
+
+                                                            </strong></li>
+                                                    </ul>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table cellspacing="0" cellpadding="0"
+                                            style="width: 100%; font-size: 10px;padding-left:20px;padding-right:20px;">
+                                            <tr>
+                                                <td cellspacing="0" cellpadding="0"
+                                                    style="border-top:1px solid #d8d8d8; padding-top:10px;padding-bottom:10px;">
+                                                    ITEM DETAILS</td>
+                                                <td cellspacing="0" cellpadding="0"
+                                                    style="border-top:1px solid #d8d8d8; padding-top:10px;padding-bottom:10px;">
+                                                    QTY</td>
+                                                <td cellspacing="0" cellpadding="0"
+                                                    style="border-top:1px solid #d8d8d8; padding-top:10px;padding-bottom:10px;">
+                                                    RATE</td>
+                                                <td cellspacing="0" cellpadding="0"
+                                                    style="border-top:1px solid #d8d8d8; padding-top:10px;padding-bottom:10px;">
+                                                    TOTAL AMOUNT
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td cellspacing="0" cellpadding="0"
+                                                    style="border-top:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8; padding-top:10px;padding-bottom:10px;">
+                                                    <strong>Plan Name</strong>
+                                                    <p>Dealer Premium</p>
+                                                </td>
+                                                <td cellspacing="0" cellpadding="0"
+                                                    style="border-top:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8; padding-top:10px;padding-bottom:10px;">
+                                                    1</td>
+                                                <td cellspacing="0" cellpadding="0"
+                                                    style="border-top:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8; padding: 10px;">
+                                                    ₹<%= content?.payment?.amount%>
+                                                </td>
+                                                <td cellspacing="0" cellpadding="0"
+                                                    style="border-top:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8; padding: 10px;">
+                                                    ₹<%= content?.payment?.amount%>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table style="width: 100%; font-size: 10px; padding-right:10px;">
+                                            <tr>
+                                                <td style="width: 50%;"></td>
+                                                <td style="width: 50%;">
+                                                    <table style="width: 100%; font-size: 10px;">
+                                                        <tr>
+                                                            <td style="padding: 5px; color: #64748B;" align="left">
+                                                                Subtotal</td>
+                                                            <td style="padding: 5px;" align="right">₹<%=
+                                                                    content?.payment?.amount %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 5px; color: #64748B;" align="left">
+                                                                Discount amount</td>
+                                                            <td style="padding: 5px;" align="right">0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 5px; color: #64748B;" align="left">
+                                                                Shipping amount</td>
+                                                            <td style="padding: 5px;" align="right">0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 5px;  color: #64748B;" align="left">Tax
+                                                            </td>
+                                                            <td style="padding: 5px;" align="right">0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style=" margin-top: 20px;" align="right" colspan="2">
+                                                                <hr />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 5px;" align="left">
+                                                                <strong>Total</strong>
+                                                            </td>
+                                                            <td style="padding: 5px;" align="right"><strong>₹<%=
+                                                                        content?.payment?.amount %>
+                                                                </strong></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 10px; padding: 10px; padding-top: 160px;">Thanks for the
+                                        purchasing.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

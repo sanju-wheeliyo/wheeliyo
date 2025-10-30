@@ -1,0 +1,31 @@
+name: Production Deploy Wheeliyo Web
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - '**/**'
+jobs:
+    build:
+        name: Build
+        environment: PRODUCTION
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Login to Docker hub
+              run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+            - name: Build Docker Image
+              run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/wheeliyo:production .
+            - name: Check image tag
+              run: echo " ${{ secrets.DOCKERHUB_USERNAME }}/wheeliyo:production"
+            - name: Push Docker Image to Docker Hub
+              run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/wheeliyo:production"
+            - name: Deploy to production server
+              env:
+                  PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+                  HOSTNAME: ${{ secrets.HOST_DNS }}
+                  USER_NAME: ${{ secrets.USERNAME }}
+              run: |
+                  echo "$PRIVATE_KEY" > private_key && sudo chmod 600 private_key &&
+                  ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+                  cd shell_codes/ && sudo chmod +x ./update.sh && ./update.sh'
